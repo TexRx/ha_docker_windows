@@ -1,0 +1,147 @@
+default_view:
+  name: DEFAULT
+  view: yes
+  icon: mdi:home
+  entities:
+    - group.locks
+    - group.foyer
+    - group.dining_area
+    - group.living_area
+    - group.master_bedroom
+    - group.master_bathroom
+    - group.master_closet
+    - group.office
+    - group.gameroom
+    - group.olivia_room
+    - group.natasha_room
+    - group.guest_bedroom
+    - group.garage
+    - group.outdoors
+sensor_view:
+  name: Sensors
+  view: yes
+  icon: mdi:gauge
+  entities:
+    - group.temperature
+    - group.motion_sensors
+    - group.doors_windows
+    - group.smoke_gas
+    - group.power_consumption
+    - group.presence
+    - sun.sun
+status_view:
+  name: Status
+  view: yes
+  icon: mdi:chip
+  entities:
+    - group.date_time
+media_view:
+  name: Media
+  view: yes
+  icon: mdi:play-network
+  entities:
+    # - remote.game_room
+    # - remote.roku_player
+    - media_player.roku_player
+misc_view:
+  name: Misc
+  view: yes
+  icon: mdi:power
+  entities:
+    - group.misc_misc
+    - group.sensor_battery_levels
+master_bedroom:
+  name: Master Bedroom
+  entities:
+    - switch.bedroom_recessed_lights
+    - light.mbr_chandelier
+    - light.ll_bedroom_2_lamp
+master_bathroom:
+  name: Master Bathroom
+master_closet:
+  name: Master Closet
+living_area:
+  name: Living Room
+  entities:
+    - switch.chandelier_3_way
+    - light.d_fireplace_light
+dining_area:
+  name: Kitchen & Dining
+  entities:
+    - switch.kitchen_recessed
+    - light.d_kitchen_pendants
+    - switch.upper_cabinet_accent_lights
+    - light.d_dining_recessed
+    - light.d_dining_pendant
+office:
+  name: Office
+gameroom:
+  name: Gameroom
+  entities:
+    - switch.stair_light
+    - switch.gameroom_overhead_lights
+    - switch.bookshelf_accent_lights
+olivia_room:
+  name: "Olivia Bedroom"
+natasha_room:
+  name: "Natasha Bedroom"
+guest_bedroom:
+  name: "Dale & Kim"
+
+foyer:
+  name: Foyer
+  entities:
+    - switch.foyer_3_way
+    - switch.foyer_lamps
+garage:
+  name: Garage
+  entities:
+    - switch.s_garage_overhead_light
+outdoors:
+  name: Outdoors
+  entities:
+    - switch.s_outdoor_sconce_garage_cor
+    - switch.front_porch_lights
+other:
+  name: Other
+  control: hidden
+temperature:
+  name: Temperature
+  entities:
+    - sensor.bedroom_3_temperature
+    - sensor.living_room_temperature
+    - sensor.main_floor_humidity
+    - sensor.main_floor_temperature
+    - sensor.master_bedroom_temperature
+    - sensor.olivia_bedroom_temperature
+    - sensor.upstairs_humidity
+    - sensor.upstairs_temperature
+motion_sensors:
+  name: Motion Sensors
+  entities:
+    - binary_sensor.bp_cam_motion_detected
+    - binary_sensor.fp_cam_motion_detected
+doors_windows:
+  name: Doors & Windows
+smoke_gas:
+  name: "Smoke & CO"
+power_consumption:
+  name: Power Consumption
+presence:
+  name: Presence
+  entities:
+    - binary_sensor.master_bedroom_occupancy
+    - binary_sensor.living_room_occupancy
+    - binary_sensor.bedroom_3_occupancy
+    - binary_sensor.olivia_bedroom_occupancy
+time_date:
+  name: Time & Date
+cameras:
+  name: Cameras
+  entities:
+    - binary_sensor.bp_cam_online
+    - binary_sensor.fp_cam_online
+sensor_battery_levels:
+  name: Sensor Battery Levels
+locks:
+  name: Locks

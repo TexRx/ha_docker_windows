@@ -1,0 +1,123 @@
+resources:
+  - url: /local/community/lovelace-slider-entity-row/slider-entity-row.js
+    type: module
+  - url: /local/community/group-card/group-card.js
+    type: module
+  - url: /local/community/lovelace-fold-entity-row/fold-entity-row.js
+    type: module
+title: Home
+views:
+  - path: default_view
+    title: DEFAULT
+    badges: []
+    cards:
+      - type: entities
+        entities:
+          - switch.foyer_3_way
+          - switch.foyer_lamps
+        title: Foyer
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - switch.kitchen_recessed
+          - type: custom:slider-entity-row
+            entity: light.d_kitchen_pendants
+            toggle: true
+          - switch.upper_cabinet_accent_lights
+          - light.d_dining_recessed
+          - light.d_dining_pendant
+        title: Kitchen & Dining
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - switch.chandelier_3_way
+          - type: custom:slider-entity-row
+            entity: light.d_fireplace_light
+            toggle: true
+        title: Living Room
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - switch.bedroom_recessed_lights
+          - light.mbr_chandelier
+          - light.ll_bedroom_2_lamp
+        title: Master Bedroom
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - switch.stair_light
+          - type: custom:slider-entity-row
+            entity: light.kp_gameroom
+            toggle: true
+          - switch.bookshelf_accent_lights
+        title: Gameroom
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - switch.s_garage_overhead_light
+        title: Garage
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - switch.s_outdoor_sconce_garage_cor
+          - switch.front_porch_lights
+        title: Outdoors
+        show_header_toggle: true
+    icon: 'mdi:home'
+  - path: sensor_view
+    title: Sensors
+    badges:
+      - entity: sun.sun
+    cards:
+      - type: entities
+        entities:
+          - type: custom:fold-entity-row
+            head: sensor.main_floor_temperature
+            entities:
+              - sensor.living_room_temperature
+              - sensor.master_bedroom_temperature
+              - sensor.main_floor_humidity
+      - type: entities
+        entities:
+          - type: custom:fold-entity-row
+            head: sensor.upstairs_temperature
+            entities:
+              - sensor.olivia_bedroom_temperature
+              - sensor.bedroom_3_temperature
+              - sensor.upstairs_humidity
+      - type: custom:group-card
+        card:
+          type: entities
+          title: Motion Sensors
+          show_header_toggle: false
+        group: group.motion_sensors
+      - type: custom:group-card
+        card:
+          type: entities
+          title: Presence
+          show_header_toggle: false
+        group: group.presence
+    icon: 'mdi:gauge'
+  - path: status_view
+    title: Status
+    badges: []
+    cards:
+      - type: custom:group-card
+        card:
+          type: entities
+          title: Cameras
+          show_header_toggle: false
+        group: group.cameras
+    icon: 'mdi:chip'
+  - path: media_view
+    title: Media
+    badges: []
+    cards:
+      - type: media-control
+        entity: media_player.roku_player
+    icon: 'mdi:play-network'
+  - path: misc_view
+    title: Misc
+    badges: []
+    cards: []
+    icon: 'mdi:power'

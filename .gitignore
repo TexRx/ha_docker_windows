@@ -1,0 +1,9 @@
+secrets.yaml
+*.db
+.cloud/
+.storage/
+.HA_VERSION
+*.log
+custom_components
+*.conf
+www/community/**/

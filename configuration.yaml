@@ -1,0 +1,57 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+lovelace:
+  mode: yaml
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+isy994:
+  host: http://192.168.1.211:80
+  username: !secret isy_user
+  password: !secret isy_password
+
+# Harmony Hub - Upstairs
+remote:
+  - platform: harmony
+    name: Game Room
+    host: 192.168.1.52
+
+# Ecobee
+notify:
+  - name: ecobee_downstairs
+    platform: ecobee
+notify:
+  - name: ecobee_upstairs
+    platform: ecobee
+
+roku:
+  - host: 10.0.0.9
+
+amcrest:
+  - host: 10.0.0.6
+    username: admin
+    password: 72mfIitg
+    name: FP Cam
+    binary_sensors:
+      - motion_detected
+      - online
+  - host: 10.0.0.8
+    username: admin
+    password: 72mfIitg
+    name: BP Cam
+    binary_sensors:
+      - motion_detected
+      - online
