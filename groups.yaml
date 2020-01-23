@@ -39,9 +39,10 @@ media_view:
   name: Media
   view: yes
   icon: mdi:play-network
-  entities:
+  entities: 
     # - remote.game_room
     # - remote.roku_player
+    - media_player.master_bedroom
     - media_player.roku_player
 misc_view:
   name: Misc

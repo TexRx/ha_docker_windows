@@ -115,6 +115,8 @@ views:
     cards:
       - type: media-control
         entity: media_player.roku_player
+      - type: media-control
+        entity: media_player.master_bedroom
     icon: 'mdi:play-network'
   - path: misc_view
     title: Misc

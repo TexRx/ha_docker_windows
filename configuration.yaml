@@ -19,7 +19,7 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 
 isy994:
-  host: http://192.168.1.211:80
+  host: !secret isy_host
   username: !secret isy_user
   password: !secret isy_password
 
@@ -27,30 +27,29 @@ isy994:
 remote:
   - platform: harmony
     name: Game Room
-    host: 192.168.1.52
+    host: !secret harmony_gameroom_ip
 
 # Ecobee
 notify:
   - name: ecobee_downstairs
     platform: ecobee
-notify:
   - name: ecobee_upstairs
     platform: ecobee
 
 roku:
-  - host: 10.0.0.9
+  - host: !secret roku_gameroom_ip
 
 amcrest:
-  - host: 10.0.0.6
-    username: admin
-    password: 72mfIitg
+  - host: !secret fp_cam_ip
+    username: !secret fp_cam_user
+    password: !secret fp_cam_password
     name: FP Cam
     binary_sensors:
       - motion_detected
       - online
-  - host: 10.0.0.8
-    username: admin
-    password: 72mfIitg
+  - host: !secret bp_cam_ip
+    username: !secret bp_cam_user
+    password: !secret bp_cam_password
     name: BP Cam
     binary_sensors:
       - motion_detected
